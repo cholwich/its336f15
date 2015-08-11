@@ -34,7 +34,7 @@ class water:
                 yield (water(3, self.y-a), "Pour {5} -> {3}", a)
             else:
                 yield (water(self.x+self.y, 0), "Pour {5} -> {3}", self.y)
-        if self.x > 0 and self.y < 5:
+        if self.y > 0 and self.y < 5:
             if self.x >= b:
                 yield (water(self.x-b, 5), "Pour {3} -> {5}", b)
             else:
