@@ -10,7 +10,6 @@ public class Successor {
   }
 
   public String toString() {
-    return "(" + state + ", " + action + ", " + 
-      cost + ")";
+    return "(" + state + ", " + action + ", " + cost + ")";
   }
 }

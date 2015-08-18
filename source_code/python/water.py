@@ -29,13 +29,13 @@ class water:
         a = 3 - self.x
         b = 5 - self.y
 
-        if self.x > 0 and self.x < 3:
+        if self.x < 3:
             if self.y >= a:
                 yield (water(3, self.y-a), "Pour {5} -> {3}", a)
-            else:
+            elif self.y > 0:
                 yield (water(self.x+self.y, 0), "Pour {5} -> {3}", self.y)
-        if self.y > 0 and self.y < 5:
+        if self.y < 5:
             if self.x >= b:
                 yield (water(self.x-b, 5), "Pour {3} -> {5}", b)
-            else:
+            elif self.x > 0:
                 yield (water(0, self.x+self.y), "Pour {3} -> {5}", self.x)

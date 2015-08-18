@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include"successor.h"
 #include"water.h"
 
 int main() {
