@@ -35,12 +35,17 @@ def ucsgraph(s0):
                 S = n.state.successors()
                 # create new nodes and add to the frontier
                 for (s, a, c) in S:
-                    if str(s) not in explored and not find_state(s, frontier): 
+                    if str(s) not in explored:
+                        idx = find_state(s, frontier)
                         p = node(s, n, a, n.cost+c, n.depth+1)
-                        heappush(frontier, p)
+                        if  idx > 0 and frontier[idx].cost > p.cost: 
+                            frontier[idx] = p
+                            heapify(frontier)
+                        else:
+                            heappush(frontier, p)
 
 def find_state(s, l):
-    for n in l:
+    for i,n in enumerate(l):
         if str(n.state) == str(s):
-            return True
-    return False
+            return i
+    return -1

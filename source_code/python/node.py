@@ -7,8 +7,8 @@ class node:
         self.depth = depth
 
     def __str__(self):
-        return ','.join([str(self.state), str(self.parent), str(self.action),
-                str(self.cost), str(self.depth)])
+        return '(' + ','.join([str(self.state), str(self.parent), str(self.action),
+                str(self.cost), str(self.depth)]) + ')'
 
     def __repr__(self):
         return str(self)
